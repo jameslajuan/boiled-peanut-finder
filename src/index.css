@@ -2,15 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: #F59E0B;
-  --secondary: #451A03;
+@layer base {
+  body {
+    /* Creamy off-white for a premium feel */
+    @apply antialiased text-[#451A03] bg-[#FCFAF7] font-sans;
+  }
 }
 
-body {
-  margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
+@layer components {
+  .btn-utility {
+    @apply px-6 py-4 rounded-2xl font-black transition-all duration-300 
+           flex items-center justify-center gap-2 active:scale-95 shadow-lg;
+  }
+  
+  .card-listing {
+    @apply bg-white rounded-[2.5rem] border-none shadow-[0_20px_50px_rgba(0,0,0,0.04)] 
+           hover:shadow-[0_20px_60px_rgba(245,158,11,0.2)] transition-all duration-500;
+  }
 }
